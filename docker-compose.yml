@@ -5,7 +5,6 @@ services:
     build: 
       context: .
       dockerfile: ./wpt-server/Dockerfile
-    #container_name: 'webpagetest_server'
     image: webpagetest/server:latest
     volumes:
       - ./wpt-server/settings/locations.ini:/var/www/html/settings/locations.ini
@@ -19,7 +18,6 @@ services:
     build: 
       context: .
       dockerfile: ./wpt-agent/Dockerfile
-    #container_name: 'webpagetest_agent'
     image: webpagetest/agent:latest
     cap_add:
     - NET_ADMIN
