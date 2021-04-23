@@ -28,5 +28,6 @@ services:
       LOCATION: Linux
       KEY: "SECRET"
       SHAPER: none
+      EXTRA_ARGS: -vvvv
     depends_on:
       - wpt_server
