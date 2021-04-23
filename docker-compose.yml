@@ -12,8 +12,6 @@ services:
       - ./wpt_data/dat:/var/www/html/dat
       - ./wpt_data/results:/var/www/html/results
       - ./wpt_data/logs:/var/www/html/logs
-    ports:
-      - 4000:80
   wpt_agent:
     build: 
       context: .
