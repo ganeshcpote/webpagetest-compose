@@ -30,6 +30,6 @@ services:
       LOCATION: Linux
       KEY: "SECRET"
       SHAPER: none
-      EXTRA_ARGS: -vvvv
+      EXTRA_ARGS: -vvvv --no-sandbox
     depends_on:
       - wpt_server
