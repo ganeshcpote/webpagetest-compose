@@ -2,9 +2,9 @@ version: "2.2"
 services:
   wpt_server:
     #### python-ssim
-    # build:
-    #   context: .
-    #   dockerfile: ./wpt-server/Dockerfile
+    build:
+      context: .
+      dockerfile: ./wpt-server/Dockerfile
     # image: webpagetest/server:enhanse
     image: webpagetest/server
     volumes:
@@ -21,8 +21,6 @@ services:
       dockerfile: ./wpt-agent/Dockerfile
     image: webpagetest/agent:cjk
     network_mode: "host"
-    ports:
-      - 4001:80
     cap_add:
     - NET_ADMIN
     init: true
