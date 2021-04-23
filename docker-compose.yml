@@ -21,6 +21,8 @@ services:
       dockerfile: ./wpt-agent/Dockerfile
     image: webpagetest/agent:cjk
     network_mode: "host"
+    cap_add:
+    - NET_ADMIN
     init: true
     environment:
       SERVER_URL: http://wpt_server/work/
