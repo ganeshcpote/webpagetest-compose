@@ -1,12 +1,12 @@
-version: "2.2"
+version: "3"
 services:
   wpt_server:
     #### python-ssim
     build:
       context: .
       dockerfile: ./wpt-server/Dockerfile
-    # image: webpagetest/server:enhanse
-    image: webpagetest/server
+    container_name: 'webpagetest_server'
+    #image: webpagetest/server
     volumes:
       - ./wpt-server/settings/locations.ini:/var/www/html/settings/locations.ini
       - ./wpt-server/settings/settings.ini:/var/www/html/settings/settings.ini
@@ -19,12 +19,14 @@ services:
     build:
       context: .
       dockerfile: ./wpt-agent/Dockerfile
-    image: webpagetest/agent:cjk
+    container_name: 'webpagetest_agent'
+    #image: webpagetest/agent:latest
     cap_add:
     - NET_ADMIN
     init: true
+    network_mode: "host"
     environment:
-      SERVER_URL: http://wpt_server/work/
+      SERVER_URL: http://localhost:4000/work/
       LOCATION: Linux
     depends_on:
       - wpt_server
