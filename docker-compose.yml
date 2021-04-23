@@ -1,0 +1,28 @@
+version: "2.2"
+services:
+  wpt_server:
+    #### python-ssim
+    # build:
+    #   context: .
+    #   dockerfile: ./wpt-server/Dockerfile
+    # image: webpagetest/server:enhanse
+    image: webpagetest/server
+    volumes:
+      - ./wpt-server/settings/locations.ini:/var/www/html/settings/locations.ini
+      - ./wpt-server/settings/settings.ini:/var/www/html/settings/settings.ini
+      - ./wpt_data/dat:/var/www/html/dat
+      - ./wpt_data/results:/var/www/html/results
+      - ./wpt_data/logs:/var/www/html/logs
+    ports:
+      - 4000:80
+  wpt_agent:
+    build:
+      context: .
+      dockerfile: ./wpt-agent/Dockerfile
+    image: webpagetest/agent:cjk
+    init: true
+    environment:
+      SERVER_URL: http://wpt_server/work/
+      LOCATION: Linux
+    depends_on:
+      - wpt_server
