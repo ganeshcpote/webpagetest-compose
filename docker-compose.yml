@@ -23,7 +23,6 @@ services:
     #image: webpagetest/agent:latest
     cap_add:
     - NET_ADMIN
-    init: true
     network_mode: "host"
     environment:
       SERVER_URL: http://localhost:4000/work/
