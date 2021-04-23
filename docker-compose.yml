@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: ./wpt-server/Dockerfile
     image: webpagetest/server:latest
+    ports:
+      - '4000:80'
     volumes:
       - ./wpt-server/settings/locations.ini:/var/www/html/settings/locations.ini
       - ./wpt-server/settings/settings.ini:/var/www/html/settings/settings.ini
@@ -21,6 +23,8 @@ services:
     - NET_ADMIN
     network_mode: "host"
     init: true
+    ports:
+      - '4001:80'
     environment:
       SERVER_URL: http://localhost:4000/work/
       LOCATION: Linux
