@@ -2,7 +2,9 @@ version: "3"
 services:
   wpt_server:
     #### python-ssim
-    build: ./wpt-server/Dockerfile
+    build: 
+      context: .
+      dockerfile: ./wpt-server/Dockerfile
     container_name: 'webpagetest_server'
     #image: webpagetest/server
     volumes:
@@ -14,7 +16,9 @@ services:
     ports:
       - 4000:80
   wpt_agent:
-    build: ./wpt-agent/Dockerfile
+    build: 
+      context: .
+      dockerfile: ./wpt-agent/Dockerfile
     container_name: 'webpagetest_agent'
     #image: webpagetest/agent:latest
     cap_add:
