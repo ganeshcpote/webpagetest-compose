@@ -21,6 +21,8 @@ services:
       dockerfile: ./wpt-agent/Dockerfile
     image: webpagetest/agent:cjk
     network_mode: "host"
+    ports:
+      - 4001:80
     cap_add:
     - NET_ADMIN
     init: true
