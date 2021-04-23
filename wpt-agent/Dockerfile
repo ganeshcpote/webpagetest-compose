@@ -4,5 +4,5 @@ RUN apt-get update && \
             fonts-noto-cjk \
     && rm -rf /var/lib/apt/lists/*
 ADD startup.sh /
-RUN chmod u+x startup.sh
+RUN chmod u+x /startup.sh
 ENTRYPOINT /startup.sh
