@@ -25,7 +25,7 @@ services:
     - NET_ADMIN
     init: true
     environment:
-      SERVER_URL: http://wpt_server/work/
+      SERVER_URL: http://localhost/work/
       LOCATION: Linux
     depends_on:
       - wpt_server
