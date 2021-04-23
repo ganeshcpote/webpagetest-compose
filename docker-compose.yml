@@ -20,6 +20,7 @@ services:
       context: .
       dockerfile: ./wpt-agent/Dockerfile
     image: webpagetest/agent:cjk
+    network_mode: "host"
     init: true
     environment:
       SERVER_URL: http://wpt_server/work/
