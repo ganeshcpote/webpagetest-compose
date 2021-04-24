@@ -1,6 +1,6 @@
 FROM webpagetest/server:latest
 RUN apt-get update && \
-    && apt-get install --yes \
+    apt-get install --yes \
                python-dev \
                python-pip \
     && rm -rf /var/lib/apt/lists/*
