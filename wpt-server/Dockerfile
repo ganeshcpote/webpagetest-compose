@@ -1,7 +1,7 @@
 FROM webpagetest/server:latest
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
-            php-apcu \
+             php7.2-apcu \
     && apt-get install --yes \
                python-dev \
                python-pip \
