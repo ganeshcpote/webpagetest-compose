@@ -7,7 +7,7 @@ services:
       dockerfile: ./wpt-server/Dockerfile
     image: webpagetest/server:latest
     ports:
-      - '4000:80'
+      - 4000:80
     volumes:
       - ./wpt-server/settings/locations.ini:/var/www/html/settings/locations.ini
       - ./wpt-server/settings/settings.ini:/var/www/html/settings/settings.ini
