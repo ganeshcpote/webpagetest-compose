@@ -23,6 +23,7 @@ services:
     - NET_ADMIN
     network_mode: "host"
     init: true
+    privileged: ""
     ports:
       - '4001:80'
     environment:
