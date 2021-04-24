@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: ./wpt-server/Dockerfile
-    image: webpagetest/server:latest
+    image: webpagetest/server
     ports:
       - 4000:80
     volumes:
