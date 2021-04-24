@@ -28,7 +28,7 @@ services:
       - '4001:80'
     environment:
       SERVER_URL: http://localhost:4000/work/
-      LOCATION: "AzureCloudLinux"
+      LOCATION: Linux
       SHAPER: none
       EXTRA_ARGS: -vvvv --no-sandbox
     depends_on:
