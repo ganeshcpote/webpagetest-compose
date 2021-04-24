@@ -1,7 +1,8 @@
 FROM webpagetest/server:latest
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends \
-             php7.2-apcu \
+    apt-get install php7.0-dev \
+    && pecl channel-update pecl.php.net  \
+    && pecl install apcu \
     && apt-get install --yes \
                python-dev \
                python-pip \
