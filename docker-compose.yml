@@ -20,7 +20,7 @@ services:
       dockerfile: ./wpt-agent/Dockerfile
     image: webpagetest/agent:latest
     cap_add:
-    - NET_ADMIN
+      - NET_ADMIN
     network_mode: "host"
     init: true
     privileged: true
