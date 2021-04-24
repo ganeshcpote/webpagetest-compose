@@ -4,7 +4,7 @@ RUN apt-get update && \
             php-apc \
     && apt-get install --yes \
                python-dev \
-               python-pip
+               python-pip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install pyssim
