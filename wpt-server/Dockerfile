@@ -5,6 +5,5 @@ RUN apt-get update && \
                python-pip \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get -y install gcc make autoconf libc-dev pkg-config
-RUN apt-get install xvfb -y
 ADD Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
 RUN pip install pyssim
