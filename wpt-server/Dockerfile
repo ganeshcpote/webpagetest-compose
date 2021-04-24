@@ -1,8 +1,5 @@
 FROM webpagetest/server:latest
 RUN apt-get update && \
-    apt-get install php7.0-dev \
-    && pecl channel-update pecl.php.net  \
-    && pecl install apcu \
     && apt-get install --yes \
                python-dev \
                python-pip \
